@@ -5,7 +5,7 @@ pipleline {
         agent {
           docker { image 'maven:latest' }
         }
-      steps{
+      steps {
         sh 'mvn --version'
       }
     }
