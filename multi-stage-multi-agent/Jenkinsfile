@@ -17,7 +17,7 @@ pipleline{
         sh 'node --version'
       }
     }
-  stage'DB'){
+  stage('DB'){
     agent{
       docker {image 'mysql:latest'}
     }
@@ -25,5 +25,5 @@ pipleline{
       sh 'select * from dual'
     }
   }
+ }
 }
-
