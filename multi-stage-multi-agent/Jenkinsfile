@@ -1,27 +1,27 @@
 pipleline {
   agent none
-  stages{
-    stage('backend'){
+  stages {
+    stage('backend') {
         agent {
-          docker {image 'maven:3.8.1-adoptopenjdk-11'}
+          docker { image 'maven:3.8.1-adoptopenjdk-11' }
         }
       steps{
         sh 'mvn --version'
       }
     }
-    stage('frontend'){
+    stage('frontend') {
       agent {
-        docker {image 'node:16-alpine'}
+        docker { image 'node:16-alpine' }
       }
-      steps{
+      steps {
         sh 'node --version'
       }
     }
-  stage('DB'){
+  stage('DB') {
     agent {
-      docker {image 'mysql:latest'}
+      docker { image 'mysql:latest' }
     }
-    steps{
+    steps {
       sh 'select * from dual'
     }
   }
