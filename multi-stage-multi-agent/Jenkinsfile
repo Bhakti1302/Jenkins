@@ -1,4 +1,4 @@
-pipleline{
+pipleline {
   agent none
   stages{
     stage('backend'){
@@ -10,7 +10,7 @@ pipleline{
       }
     }
     stage('frontend'){
-      agent{
+      agent {
         docker {image 'node:16-alpine'}
       }
       steps{
@@ -18,7 +18,7 @@ pipleline{
       }
     }
   stage('DB'){
-    agent{
+    agent {
       docker {image 'mysql:latest'}
     }
     steps{
